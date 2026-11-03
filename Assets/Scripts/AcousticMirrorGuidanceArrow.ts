@@ -1,3 +1,4 @@
+import { amDeltaTime } from "./AcousticMirrorClock"
 import { getArrow, getRing, makeVisual } from "./AcousticMirrorMeshes"
 
 /**
@@ -61,7 +62,7 @@ export class AcousticMirrorGuidanceArrow extends BaseScriptComponent {
       new vec4(this.color.x, this.color.y, this.color.z, 0.6))
     halo.obj.getTransform().setLocalScale(new vec3(this.sizeCm * 0.85, this.sizeCm * 0.85, 1))
     this.visual.enabled = false
-    this.createEvent("UpdateEvent").bind(() => { this.time += getDeltaTime() })
+    this.createEvent("UpdateEvent").bind(() => { this.time += amDeltaTime() })
   }
 
   showTowards(camT: Transform, dir2d: vec2, hFovDeg: number, vFovDeg: number): void {

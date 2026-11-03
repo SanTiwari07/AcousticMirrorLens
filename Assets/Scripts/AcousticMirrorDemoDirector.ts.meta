@@ -1,0 +1,67 @@
+- !<AssetImportMetadata/b408e5f5-63f3-4882-87a5-94e15ebb7819>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 03c9f57b-9dfa-466d-b79e-f548429db867
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 03c9f57b-9dfa-466d-b79e-f548429db867
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 0c2ea5d3-6543-4813-a23a-454c903dcf47
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/0c2ea5d3-6543-4813-a23a-454c903dcf47>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: b4451fa8-329b-4ae6-8a4a-91bf42fd5e6f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    fps: false
+    main: false
+    panel1: false
+    panel2: false
+    panel3: false
+    realStepSeconds: false
+    runOnStart: false
+    stampMaterial: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - main: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      panel1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      panel2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      panel3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      runOnStart: false
+      fps: !<float> 30.000000
+      realStepSeconds: 0.200000
+      stampMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input AssignableType_1 main {"hint":"The experience orchestrator"}'
+    - '// @input SceneObject panel1 {"hint":"Acoustic panel 1 (rack order)"}'
+    - '// @input SceneObject panel2 {"hint":"Acoustic panel 2"}'
+    - '// @input SceneObject panel3 {"hint":"Acoustic panel 3"}'
+    - '// @input bool runOnStart {"hint":"Run the demo timeline when the lens starts"}'
+    - '// @input float fps = 30 {"hint":"Frames per second of the recording (each advance = 1/fps s of Lens time)"}'
+    - '// @input float realStepSeconds = 0.3 {"hint":"Real seconds between advances; must be longer than one capture so every step is captured"}'
+    - '// @input Asset.Material stampMaterial {"hint":"Material for the frame-number stamp (any unlit material)"}'

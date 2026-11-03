@@ -1,3 +1,4 @@
+import { amDeltaTime } from "./AcousticMirrorClock"
 import { AcousticMirrorAudioController } from "./AcousticMirrorAudioController"
 import { AcousticMirrorDraggable } from "./AcousticMirrorDraggable"
 import { horizontalAngleDeg, ReflectionResult, solveReflection, viewInfo } from "./AcousticMirrorGeometry"
@@ -404,7 +405,7 @@ export class AcousticMirrorMain extends BaseScriptComponent {
   // ── Per frame ──────────────────────────────────────────────
   private onLateUpdate(): void {
     this.frame++
-    this.time += getDeltaTime()
+    this.time += amDeltaTime()
     if (!this.ready) {
       // Wait two frames so device tracking has written the camera pose, then initialise.
       if (this.frame < 2) return
@@ -475,7 +476,7 @@ export class AcousticMirrorMain extends BaseScriptComponent {
   }
 
   private approach(v: number, target: number, ratePerSec: number): number {
-    const d = ratePerSec * getDeltaTime()
+    const d = ratePerSec * amDeltaTime()
     return v < target ? Math.min(target, v + d) : Math.max(target, v - d)
   }
 
@@ -699,7 +700,7 @@ export class AcousticMirrorMain extends BaseScriptComponent {
       this.pingTimer = 0
       this.log("arrow shown -> " + best.id)
     }
-    this.pingTimer -= getDeltaTime()
+    this.pingTimer -= amDeltaTime()
     if (this.pingTimer <= 0) {
       this.audio.playPing()
       this.pingCount++

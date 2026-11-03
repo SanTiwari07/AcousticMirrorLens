@@ -1,3 +1,4 @@
+import { amDeltaTime } from "./AcousticMirrorClock"
 /**
  * AcousticMirrorAudioController — the simulated acoustic improvement.
  *
@@ -141,7 +142,7 @@ export class AcousticMirrorAudioController extends BaseScriptComponent {
 
   private onUpdate(): void {
     if (Math.abs(this.current - this.target) < 1e-4) return
-    const step = getDeltaTime() / Math.max(0.05, this.crossfadeSeconds)
+    const step = amDeltaTime() / Math.max(0.05, this.crossfadeSeconds)
     if (this.current < this.target) this.current = Math.min(this.target, this.current + step)
     else this.current = Math.max(this.target, this.current - step)
     this.applyVolumes()

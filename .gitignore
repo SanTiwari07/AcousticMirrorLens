@@ -32,8 +32,12 @@ PluginsUserPreferences/
 Support/
 *.esproj.*.lock
 
-# Absolute-path symlink created by the skills installer (real copy lives in .agents/skills)
-.claude/skills/
+# The plan-lens skill lives in .claude/skills/plan-lens as a real folder, not in
+# .agents/skills: Lens Studio's built-in Agents-Docs plugin deletes any .agents/
+# directory on every project load and save (legacyCleanup.js). Track only that
+# skill; anything else the installer drops in .claude/skills stays ignored.
+.claude/skills/*
+!.claude/skills/plan-lens/
 # Duplicate skill copy created by the skills installer for another agent
 agent/
 

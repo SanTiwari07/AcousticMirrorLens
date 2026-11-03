@@ -7,6 +7,7 @@
     - !<own> 32ab07a1-d3fe-4b32-822a-6e5d9dd1c778
     - !<own> 46c36a60-d303-470b-852d-a5a1d5d792ca
     - !<own> 08fd20e4-93cf-40fe-b5cf-dbe3e7b6deff
+    - !<own> 4c7a0196-8fd4-457a-b6cf-404c07a351e8
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       - id: 1
@@ -1310,6 +1311,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/4c7a0196-8fd4-457a-b6cf-404c07a351e8>
+  PrefabRemaps:
+    []
+  Name: DemoDirector
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> efd026a2-8667-4339-b06b-362437ba50cb
 - !<SceneObject/4cb212ad-5246-4215-adf1-aaf3ccfc0e9c>
   PrefabRemaps:
     []
@@ -3207,6 +3223,30 @@
     []
   Components:
     - !<own> 4c29e98e-0e83-49f8-a6db-794e0ed697b2
+- !<ScriptComponent/efd026a2-8667-4339-b06b-362437ba50cb>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDemoDirector
+  Enabled: true
+  ScriptAsset: !<reference> 03c9f57b-9dfa-466d-b79e-f548429db867
+  ScriptInputsDefault:
+    runOnStart: true
+    fps: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      main: !<MappingBased.AssignableType_1> b3984ed5-9aa4-4e1f-a82e-f65ba0ff54af
+      panel1: !<reference.SceneObject> d2c82b58-89f8-42cd-a742-8d8482421b95
+      panel2: !<reference.SceneObject> a7695913-4c89-4222-8869-087e195375e1
+      panel3: !<reference.SceneObject> 2164e874-5921-499a-abd4-8acb2788c56a
+      runOnStart: false
+      fps: !<float> 30.000000
+      realStepSeconds: 0.300000
+      stampMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/f0394c5d-4c44-4c65-a77c-e1c7e05ca905>
   PrefabRemaps:
     []

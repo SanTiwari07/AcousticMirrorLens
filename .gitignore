@@ -39,3 +39,6 @@ agent/
 
 # Added by Lens Studio (LEAF plugin)
 leaf_plugin_settings.json
+
+# Generated scene snapshot from the Lens Studio MCP VirtualScene tool
+.virtual-scene.json

@@ -1,0 +1,19 @@
+# BEGIN Lens Studio managed Agents-Docs block
+.mcp.json
+.cursor/mcp.json
+.vscode/mcp.json
+.codex/config.toml
+.claude/settings.local.json
+# END Lens Studio managed Agents-Docs block
+
+# Lens Studio generated / local state
+Cache/
+Workspaces/
+PluginsUserPreferences/
+Support/
+*.esproj.*.lock
+
+# Absolute-path symlink created by the skills installer (real copy lives in .agents/skills)
+.claude/skills/
+# Duplicate skill copy created by the skills installer for another agent
+agent/

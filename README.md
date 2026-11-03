@@ -56,6 +56,11 @@ The glasses sit at your head, so your head **is** the listening position. The Le
 ## A walk through the Lens
 
 <p align="center">
+  <img src="docs/demo.gif" alt="The whole flow in the Lens Studio preview: speaker setup at 45 degrees, the sweet spot locking at 60, Find Reflections with an arrow pointing off-view, turning left past the monitor and the desk bounce to the left wall reflection at 3.2 ms and 157 Hz, a panel snapping on and turning the ray green, and the room treated 3 of 3" width="400">
+  <br><sub><b>The whole flow, start to finish.</b> Real frames from the Lens Studio preview, played in order with captions.</sub>
+</p>
+
+<p align="center">
   <img src="docs/screenshots/04-left-wall-point.jpg" alt="Turned towards the left wall: a glowing red ring on the wall grid, the red reflected ray bouncing through its centre, and a tag reading Left wall reflection, 3.2 ms, 157 Hz" width="420">
   <br><sub><b>A reflection point.</b> Turn to the left wall and the ring is there, on the wall, where the left speaker's sound bounces to your ears. The tag opens when you look at it: 3.2 ms late, cancelling sound near 157 Hz.</sub>
 </p>

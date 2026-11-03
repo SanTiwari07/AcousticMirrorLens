@@ -262,6 +262,10 @@ Built with an agent-driven workflow:
 2. **Build:** CLAD and the Lens Studio MCP built the Lens from that brief.
 3. **Verify:** LEAF scenarios check each done criterion in the preview. All six pass.
 
+## Team
+
+Built by **Sanskar Tiwari** and **Shambhavi Patil**.
+
 ## Disclosure
 
 - **Lens Studio SPECS base template**, Spectacles Interaction Kit, Spectacles UI Kit and the LEAF package are used as shipped with Lens Studio.

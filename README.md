@@ -1,6 +1,5 @@
 <!--
-  TODO before submitting: add docs/brand/banner.jpg, docs/screenshots/*.jpg and a docs/demo.gif,
-  then uncomment the image blocks below.
+  TODO before submitting: add a docs/demo.gif, then uncomment the image block below.
 -->
 
 <h1 align="center">AcousticMirror</h1>
@@ -67,15 +66,23 @@ The glasses sit at your head, so your head **is** the listening position. The Le
 
 ## A walk through the Lens
 
-<!--
-Screenshots of the running preview go here, in the same layout the FieldDX README uses:
+<p align="center">
+  <img src="docs/screenshots/04-left-wall-point.jpg" alt="Turned towards the left wall: a glowing red ring on the wall grid, the red reflected ray bouncing through its centre, and a tag reading Left wall reflection, 3.2 ms, 157 Hz" width="420">
+  <br><sub><b>A reflection point.</b> Turn to the left wall and the ring is there, on the wall, where the left speaker's sound bounces to your ears. The tag opens when you look at it: 3.2 ms late, cancelling sound near 157 Hz.</sub>
+</p>
+
 <table>
 <tr>
-<td width="50%"><img src="docs/screenshots/01-speaker-setup.jpg" alt="..."><br><b>Speaker setup.</b> ...</td>
-<td width="50%"><img src="docs/screenshots/02-find-reflections.jpg" alt="..."><br><b>Find reflections.</b> ...</td>
+<td width="50%"><img src="docs/screenshots/01-speaker-setup.jpg" alt="Status card on step 1 showing speaker angle 45 degrees against a target of 60, with the white speaker triangle and listening marker on the desk"><br><b>Speaker setup.</b> The card shows the live angle between the speakers, 45° against a target of 60°. The triangle runs from each monitor to the marker at your listening position.</td>
+<td width="50%"><img src="docs/screenshots/02-sweet-spot-locked.jpg" alt="Status card reading Sweet Spot Locked at 60 degrees, the triangle and marker now green, Next enabled"><br><b>Sweet spot locked.</b> At 60° the triangle turns green, a chime plays and <b>Next</b> unlocks.</td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/03-reflections-found-arrow.jpg" alt="Step 2 card reading 3 reflection points found, with a red arrow at the lower-left edge of the view pointing towards an off-screen point"><br><b>Reflections found, out of view.</b> Three points are found, but none is in the narrow SPECS view while you face the desk. A red arrow at the edge of the view points to one, with a soft ping.</td>
+<td><img src="docs/screenshots/05-room-treated.jpg" alt="Status card reading Room Treated, 3/3 reflection points, audio clarity 100 percent"><br><b>Room treated.</b> All three points have a panel. The rays are green, a chime plays, the audio is fully clean, and <b>Reset</b> starts again.</td>
 </tr>
 </table>
--->
+
+<sub>All screenshots are from the Lens Studio preview, which shows the narrow SPECS display window. The grey background stands in for the real room, since the display is additive.</sub>
 
 | Step | What you see | What you do |
 |---|---|---|

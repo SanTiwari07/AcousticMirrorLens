@@ -1,23 +1,12 @@
-<!--
-  TODO before submitting: add a docs/demo.gif, then uncomment the image block below.
--->
-
-<h1 align="center">AcousticMirror</h1>
-
-<p align="center"><b>Do the studio "mirror trick" alone.</b><br>Find the wall reflections that ruin your monitors' sound, and fix them, with AR glasses that sit exactly where your ears are.</p>
-
-<!--
 <p align="center">
-  <img src="docs/demo.gif" alt="A red reflected ray on the left wall; a panel is dragged onto its glowing point, the ray turns green and the sound goes from hollow to clean" width="100%">
+  <img src="docs/brand/banner.png" alt="AcousticMirror: the studio mirror trick, alone. A card reads Left wall reflection, arrives 3.2 ms late, cancels near 157 Hz. A second card reads Room treated, 3 of 3 reflection points treated." width="100%">
 </p>
--->
 
 <p align="center">
   <img src="https://img.shields.io/badge/Lens%20Studio-5.23.2-1769aa?style=flat-square" alt="Lens Studio 5.23.2">
   <img src="https://img.shields.io/badge/target-Snap%20Spectacles-d99a1e?style=flat-square" alt="Snap Spectacles">
   <img src="https://img.shields.io/badge/runs%20in-Lens%20Studio%20preview-123232?style=flat-square" alt="Runs in the Lens Studio preview">
   <img src="https://img.shields.io/badge/TypeScript-4d5c58?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/built%20for-Learn%20AR%20with%20SPECS-4d5c58?style=flat-square" alt="Learn AR with SPECS hackathon">
 </p>
 
 <p align="center">
@@ -254,9 +243,9 @@ To run the scripted walkthrough instead, set `runOnStart` on `AcousticMirrorSelf
 
 ## How it was built
 
-Built for the **Learn AR with SPECS** hackathon, using the required tools:
+Built with an agent-driven workflow:
 
-1. **Plan:** the Devpost Learn skill pack's `plan-lens` interview produced the approved [design brief](devpost/design-brief.md).
+1. **Plan:** the `plan-lens` interview produced the approved [design brief](devpost/design-brief.md).
 2. **Build:** CLAD and the Lens Studio MCP built the Lens from that brief.
 3. **Verify:** LEAF scenarios check each done criterion in the preview. All six pass.
 
@@ -264,12 +253,11 @@ Built for the **Learn AR with SPECS** hackathon, using the required tools:
 
 - **Lens Studio SPECS base template**, Spectacles Interaction Kit, Spectacles UI Kit and the LEAF package are used as shipped with Lens Studio.
 - The audio loops and chimes in `Assets/GeneratedSFX` were generated for this Lens. No copyrighted music is used anywhere.
-- All Lens code was written during the hackathon period.
+- All Lens code was written new for this project.
 
 ## Sources
 
-- Hackathon: Learn AR with SPECS, <https://learn-specs.devpost.com/>
 - Lens Studio and Spectacles documentation: <https://developers.specs.com/>
 - Speed of sound in air: 343 m/s at about 20 °C, used for the delay.
 
-<p align="center"><br><sub><b>AcousticMirror</b> · See where your sound goes wrong, and fix it, on your own.</sub></p>
+<p align="center"><br><img src="docs/brand/logo.svg" alt="AcousticMirror logo: five vertical sound bars in a rounded square, the middle one in cyan" width="56"><br><sub><b>AcousticMirror</b> · See where your sound goes wrong, and fix it, on your own.</sub></p>

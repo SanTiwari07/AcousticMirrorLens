@@ -595,6 +595,29 @@ export class AcousticMirrorMain extends BaseScriptComponent {
   }
 
   // ── Drawing ────────────────────────────────────────────────
+  /**
+   * Where a point's tag sits. It must never be hidden by a snapped panel or by the
+   * rays that run from the speaker and towards the eye.
+   * - Wall: above the ring, standing off the wall by more than a panel's thickness
+   *   once treated, so the panel never swallows it.
+   * - Desk: beside the ring on the side away from the speaker (both rays run from the
+   *   speaker's side or towards the eye, which project over the area above the ring),
+   *   lifted above the desk top, and above the panel once treated.
+   */
+  private tagPosition(m: vec3, n: vec3, speaker: vec3, head: vec3, treated: boolean): vec3 {
+    const panel = treated ? this.panelThicknessCm : 0
+    if (Math.abs(n.y) < 0.9) {
+      return m.add(n.uniformScale(panel + 4)).add(new vec3(0, this.ringRadiusCm + 9, 0))
+    }
+    const toHead = head.sub(m)
+    const flat = new vec3(toHead.x, 0, toHead.z)
+    let side = flat.length > 1e-3 ? vec3.up().cross(flat).normalize() : vec3.right()
+    const toSpeaker = speaker.sub(m)
+    if (side.dot(new vec3(toSpeaker.x, 0, toSpeaker.z)) > 0) side = side.uniformScale(-1)
+    const sideways = this.ringRadiusCm + 13
+    return m.add(side.uniformScale(sideways)).add(new vec3(0, panel + 6, 0))
+  }
+
   private drawReflections(camT: Transform, head: vec3, sl: vec3, sr: vec3, pulse: number): void {
     const vis = this.points
     for (let i = 0; i < vis.length; i++) {
@@ -636,8 +659,7 @@ export class AcousticMirrorMain extends BaseScriptComponent {
         radius, col, p.treated ? 0.2 : pulse, p.treated ? 0.6 : 1)
       // Tag: delay + interference frequency, only while looked at.
       p.labelVisible = looked
-      const up = Math.abs(n.y) > 0.9 ? new vec3(0, 1, 0).uniformScale(this.ringRadiusCm + 9) : new vec3(0, this.ringRadiusCm + 9, 0)
-      const tagPos = p.res.point.add(n.uniformScale(Math.abs(n.y) > 0.9 ? 0 : 4)).add(up)
+      const tagPos = this.tagPosition(p.res.point, n, s, head, p.treated)
       const title = this.prettyName(p.id) + (p.treated ? " · treated" : " reflection")
       const body = p.res.delayMs.toFixed(1) + " ms  ·  " + Math.round(p.res.freqHz) + " Hz"
       this.pointLabels.setLabel(i, looked, tagPos, head, title, body, p.treated ? "treated" : "untreated")

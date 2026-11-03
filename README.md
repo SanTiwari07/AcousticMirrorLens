@@ -67,7 +67,11 @@ The glasses sit at your head, so your head **is** the listening position. The Le
 </tr>
 <tr>
 <td><img src="docs/screenshots/03-reflections-found-arrow.jpg" alt="Step 2 card reading 3 reflection points found, with a red arrow at the lower-left edge of the view pointing towards an off-screen point"><br><b>Reflections found, out of view.</b> Three points are found, but none is in the narrow SPECS view while you face the desk. A red arrow at the edge of the view points to one, with a soft ping.</td>
-<td><img src="docs/screenshots/05-room-treated.jpg" alt="Status card reading Room Treated, 3/3 reflection points, audio clarity 100 percent"><br><b>Room treated.</b> All three points have a panel. The rays are green, a chime plays, the audio is fully clean, and <b>Reset</b> starts again.</td>
+<td><img src="docs/screenshots/05-desk-point.jpg" alt="The desk reflection point: a red ring on the desk top below the left monitor, the red ray dropping into it, and a tag beside it reading Desk reflection, 0.1 ms, 3651 Hz"><br><b>The desk bounce.</b> The left speaker also reflects off the desk top. The tag sits beside the ring, clear of the rays: 0.1 ms late, cancelling sound near 3651 Hz.</td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/06-panel-snapped.jpg" alt="An acoustic panel snapped flush on the left wall over the point, the ring and ray now green, the tag reading Left wall treated, and an edge arrow pointing to the points still untreated"><br><b>Panel snapped.</b> Drop a panel within 8 cm and it snaps flush on the wall. The ring and ray turn green, and the edge arrow points on to the points still left.</td>
+<td><img src="docs/screenshots/07-room-treated.jpg" alt="Status card reading Room Treated, 3/3 reflection points, audio clarity 100 percent"><br><b>Room treated.</b> All three points have a panel. The rays are green, a chime plays, the audio is fully clean, and <b>Reset</b> starts again.</td>
 </tr>
 </table>
 

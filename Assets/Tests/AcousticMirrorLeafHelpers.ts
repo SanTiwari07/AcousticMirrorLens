@@ -13,6 +13,8 @@ import { SurfaceRect } from "../Scripts/AcousticMirrorGeometry"
  */
 
 export const TARGET_ANGLE = 60
+let DRAG_TRACE = false
+export function setDragTrace(on: boolean): void { DRAG_TRACE = on }
 export const DEG = 180 / Math.PI
 
 export function main(): AcousticMirrorMain {
@@ -92,10 +94,17 @@ export async function tap(ix: DefaultLeafInteractor, name: string): Promise<void
 export async function dragOnce(ix: DefaultLeafInteractor, name: string, perFrame: vec3, durationMs: number): Promise<boolean> {
   const it = findInteractableByName(name, undefined, true)
   if (!it) throw new Error("Interactable '" + name + "' not found or not enabled")
+  const trace: string[] = []
+  const unsub = DRAG_TRACE ? UpdateDispatcher.getInstance().onLateUpdate.add(() => {
+    const p = toStudio(it.getTransform().getWorldPosition())
+    trace.push(p.x.toFixed(1) + "/" + p.z.toFixed(1))
+  }) : null
   try {
     await withTimeout(ix.drag(it, perFrame, durationMs), durationMs + 2500, "drag timeout")
+    if (unsub) { unsub(); log("trace " + name + " per=" + fmt(perFrame) + ": " + trace.join(" ")) }
     return true
   } catch (e) {
+    if (unsub) unsub()
     log("drag on " + name + " did not end normally (" + e + ") — unsticking interactor")
     unstick(ix)
     await sleep(200)
@@ -104,9 +113,11 @@ export async function dragOnce(ix: DefaultLeafInteractor, name: string, perFrame
 }
 
 /**
- * Closed-loop real drag: repeatedly drag `name` so that its world position approaches
- * `target()` (re-evaluated each iteration). Per-frame drag vector is calibrated from the
- * measured displacement of the previous drag. Stops when done() is true.
+ * Closed-loop ("servo") real drag. One real SIK pinch-drag through the LEAF interactor;
+ * LEAF adds the same `dragVector` object to the ray every frame, so we steer it in place
+ * each frame towards target() (max `speed` cm/frame) and zero it once done() is true —
+ * the hand then holds still until the drag releases. Repeats up to maxIters drags.
+ * (Needed because each SIK grab first pulls the prop towards the simulated ray's anchor.)
  */
 export async function dragTowards(
   ix: DefaultLeafInteractor,
@@ -114,31 +125,42 @@ export async function dragTowards(
   obj: SceneObject,
   target: () => vec3,
   done: () => boolean,
-  maxIters: number = 10,
-  durationMs: number = 350,
+  maxIters: number = 4,
+  durationMs: number = 1800,
+  speed: number = 2.5,
 ): Promise<number> {
-  let gain = 1 / 15 // per-frame vector = remaining delta * gain (calibrated)
   let iters = 0
   for (let i = 0; i < maxIters; i++) {
     if (done()) break
-    const before = obj.getTransform().getWorldPosition()
-    const want = target().sub(before)
-    if (want.length < 0.05) break
-    const per = want.uniformScale(gain)
-    const ended = await dragOnce(ix, name, per, durationMs)
-    iters++
-    await sleep(150)
-    if (done() || !ended) break
-    const moved = obj.getTransform().getWorldPosition().sub(before)
-    // Calibrate on the component along the commanded direction.
-    const along = moved.dot(want.normalize())
-    if (along > 0.2) {
-      const ratio = want.length / along
-      gain = Math.max(1 / 200, Math.min(1, gain * ratio * 0.95))
-    } else {
-      gain = Math.min(1, gain * 2)
+    const it = findInteractableByName(name, undefined, true)
+    if (!it) throw new Error("Interactable '" + name + "' not found or not enabled")
+    // LEAF moves its simulated ray by `per` on every onDragUpdate; we add a steering step on
+    // the same event (same mechanism), so the hand follows target() and stops when done().
+    const d0 = target().sub(obj.getTransform().getWorldPosition())
+    const per = d0.length > 1e-3 ? d0.normalize().uniformScale(0.01) : new vec3(0.01, 0, 0)
+    let frozen = false
+    let steps = 0
+    const a = ix as any
+    const unsub = it.onDragUpdate.add(() => {
+      if (frozen || done()) { frozen = true; return }
+      const d = target().sub(obj.getTransform().getWorldPosition())
+      let step = d.uniformScale(0.35)
+      if (step.length > speed) step = step.normalize().uniformScale(speed)
+      a.startPoint = a.startPoint.add(step)
+      a.endPoint = a.endPoint.add(step)
+      steps++
+    })
+    let ended = false
+    try {
+      ended = await dragOnce(ix, name, per, durationMs)
+    } finally {
+      unsub()
     }
-    log("drag " + name + " iter " + i + ": wanted " + want.length.toFixed(1) + "cm moved " + along.toFixed(1) + "cm -> gain " + gain.toFixed(4))
+    log("drag " + name + " steering steps=" + steps)
+    iters++
+    await sleep(200)
+    log("drag " + name + " #" + i + " frozen=" + frozen + " done=" + done() + " dist=" + obj.getTransform().getWorldPosition().distance(target()).toFixed(1))
+    if (done() || !ended) break
   }
   return iters
 }
@@ -170,7 +192,7 @@ export function rightMonitorTargetFor(angleDeg: number): vec3 {
 export async function dragMonitorsToLock(ix: DefaultLeafInteractor): Promise<number> {
   const m = main()
   return dragTowards(ix, "RightMonitor", m.rightMonitor.getSceneObject(),
-    () => rightMonitorTargetFor(TARGET_ANGLE), () => st().sweetSpotLocked, 12)
+    () => rightMonitorTargetFor(TARGET_ANGLE), () => st().sweetSpotLocked)
 }
 
 /** Press Reset (real button) and wait for step 1. */
@@ -202,7 +224,7 @@ export async function dragPanelToPoint(ix: DefaultLeafInteractor, panelIdx: numb
   const pointOf = () => st().points.find((p: any) => p.id === pointId)
   await dragTowards(ix, panelName, panelObj,
     () => v3(pointOf().position).add(surface.getRect().n.uniformScale(3)),
-    () => pointOf().treated, 12, 400)
+    () => pointOf().treated)
 }
 
 // ── Reflection maths (independent re-derivation, image-source method) ──

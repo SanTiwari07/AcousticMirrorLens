@@ -27,7 +27,7 @@ export class AMC1SpeakerPositioningScenario extends Scenario {
     const m = main()
     const deskY0 = toStudio(m.rightMonitor.getTransform().getWorldPosition()).y
     await dragTowards(ix, "RightMonitor", m.rightMonitor.getSceneObject(),
-      () => rightMonitorTargetFor(52), () => Math.abs(st().speakerAngleDeg - 52) < 1.5, 10)
+      () => rightMonitorTargetFor(52), () => Math.abs(st().speakerAngleDeg - 52) < 1, 4)
     const s1 = st()
     log("C1 after drag to ~52: angle=" + s1.speakerAngleDeg)
     expect(Math.abs(s1.speakerAngleDeg - 52) < 3, "drag moved the monitor to ~52° (got " + s1.speakerAngleDeg + ")").toBe(true)
@@ -35,6 +35,7 @@ export class AMC1SpeakerPositioningScenario extends Scenario {
 
     // 2) Real drag to 60° — must lock.
     const chimeBefore = s1.lastCue
+    const cuesBefore = (m.audio as any).cueCount as number
     await dragMonitorsToLock(ix)
     await sleep(300)
     const s2 = st()
@@ -42,6 +43,7 @@ export class AMC1SpeakerPositioningScenario extends Scenario {
     expect(Math.abs(s2.speakerAngleDeg - 60) <= 2.3, "angle within 60±2 (got " + s2.speakerAngleDeg + ")").toBe(true)
     expect(s2.sweetSpotLocked, "sweet spot locked").toBe(true)
     expect(s2.lastCue, "lock chime played (before: " + chimeBefore + ")").toBe("lockChime")
+    expect((m.audio as any).cueCount > cuesBefore, "a new chime cue fired on lock").toBe(true)
     expect(s2.card.status, "status card text").toBe("Sweet Spot Locked")
     expect(s2.card.nextEnabled, "Next enabled after lock").toBe(true)
     // Monitor stays standing on the desk (Main constrains it; drag must not lift it off).

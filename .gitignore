@@ -36,3 +36,6 @@ Support/
 .claude/skills/
 # Duplicate skill copy created by the skills installer for another agent
 agent/
+
+# Added by Lens Studio (LEAF plugin)
+leaf_plugin_settings.json

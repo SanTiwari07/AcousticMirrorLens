@@ -33,10 +33,25 @@ export class AMC4PanelSnapScenario extends Scenario {
     const r = surfaceFor("LeftWall")
     const vis = (m as any).points[pointIdx].visual
 
-    // Phase 1: stop ~15 cm above the point (off the line of sight) — no snap yet.
-    const nearTarget = () => v3(pt().position).add(r.n.uniformScale(3)).add(new vec3(0, 15, 0))
-    await dragTowards(ix, "AcousticPanel1", panelObj, nearTarget,
-      () => pt().treated || panelObj.getTransform().getWorldPosition().distance(nearTarget()) < 2, 12, 400)
+    // Phase 1: carry the panel ABOVE the head→point line of sight (aim-assist snaps anything
+    // within 8 cm of that line while dragging) and park it ~15 cm above the point — no snap yet.
+    const up = new vec3(0, 1, 0)
+    const startPos = panelObj.getTransform().getWorldPosition()
+    const headY = m.cameraObject.getTransform().getWorldPosition().y
+    const highY = Math.max(startPos.y, headY) + 30
+    const nearTarget = () => v3(pt().position).add(r.n.uniformScale(3)).add(up.uniformScale(15))
+    const waypoints = [
+      () => new vec3(startPos.x, highY, startPos.z),
+      () => new vec3(nearTarget().x, highY, nearTarget().z),
+      nearTarget,
+    ]
+    let wp = 0
+    const wpTarget = () => {
+      if (wp < waypoints.length - 1 && panelObj.getTransform().getWorldPosition().distance(waypoints[wp]()) < 2) wp++
+      return waypoints[wp]()
+    }
+    await dragTowards(ix, "AcousticPanel1", panelObj, wpTarget,
+      () => pt().treated || (wp === waypoints.length - 1 && panelObj.getTransform().getWorldPosition().distance(nearTarget()) < 2))
     await sleep(300)
     const dNear = panelObj.getTransform().getWorldPosition().distance(v3(pt().position))
     log("C4 phase1 panel=" + fmt(panelObj.getTransform().getWorldPosition()) + " M=" + fmt(v3(pt().position)) + " dist=" + dNear.toFixed(1) + " treated=" + pt().treated)
@@ -46,7 +61,7 @@ export class AMC4PanelSnapScenario extends Scenario {
 
     // Phase 2: drag onto the point — must snap.
     await dragTowards(ix, "AcousticPanel1", panelObj, () => v3(pt().position).add(r.n.uniformScale(3)),
-      () => pt().treated, 12, 400)
+      () => pt().treated)
     await sleep(400)
     const s1 = st()
     const p = s1.points[pointIdx]

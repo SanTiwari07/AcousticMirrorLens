@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <b><a href="https://youtu.be/rUffGjGU8b4">▶ Watch the demo video</a></b>
+</p>
+
+<p align="center">
   <a href="#you-are-alone-in-the-room">The problem</a> ·
   <a href="#what-acousticmirror-does">What it does</a> ·
   <a href="#a-walk-through-the-lens">Walk-through</a> ·

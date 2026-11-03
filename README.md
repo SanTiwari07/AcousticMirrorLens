@@ -1,6 +1,6 @@
 <!--
   TODO before submitting: add docs/brand/banner.jpg, docs/screenshots/*.jpg and a docs/demo.gif,
-  then uncomment the image blocks below. Fill the test table with the real final LEAF run.
+  then uncomment the image blocks below.
 -->
 
 <h1 align="center">AcousticMirror</h1>
@@ -183,18 +183,22 @@ The glasses replace the second person in the mirror trick.
 
 ## Done criteria and tests
 
-Each criterion from the [design brief](devpost/design-brief.md) has a LEAF scenario in `Assets/Tests`, except the last one, which is covered by the scripted self-test.
+Every criterion from the [design brief](devpost/design-brief.md) has a LEAF scenario in `Assets/Tests`.
 
-| # | Criterion | Test |
-|---|---|---|
-| 1 | Dragging a monitor to about 60° turns the triangle green and shows Sweet Spot Locked | `AMC1SpeakerPositioningScenario.ts` |
-| 2 | Find Reflections shows rays and three valid points, each with ms and Hz | `AMC2ReflectionPointsScenario.ts` |
-| 3 | Walking sideways moves the points | `AMC3PointsFollowHeadScenario.ts` |
-| 4 | A panel within 8 cm snaps, the ray turns green, the counter rises | `AMC4PanelSnapScenario.ts` |
-| 5 | All three treated: green, chime, clean audio, 3/3, and Reset restores everything | `AMC5RoomTreatedScenario.ts` |
-| 6 | An off-screen point shows the edge arrow, and turning back hides it | `AcousticMirrorSelfTest.ts` (no LEAF scenario yet) |
+**Final run: 6 of 6 pass** in the Lens Studio 5.23.2 preview (LEAF 2.0.2, SIK 0.18.0). The full suite was run several times, and every scenario passed on every run.
 
-**Results of the final run:** *to be filled in from the real final run. Nothing here is claimed as passing until it has run and passed.*
+| # | Criterion | Scenario | Result | What the scenario checks |
+|---|---|---|---|---|
+| 1 | Dragging a monitor to about 60° turns the triangle green and shows Sweet Spot Locked | `c1-speaker-positioning` | ✅ Pass | Starts at 45°, not locked, Next disabled. A drag to about 53° stays unlocked. A drag to 59.8° locks, plays the lock chime, turns the triangle green, shows "Sweet Spot Locked" and enables Next. The monitor stays on the desk. |
+| 2 | Find Reflections shows rays and three valid points, each with ms and Hz | `c2-reflection-points` | ✅ Pass | Three points, on the left wall, right wall and desk, with 0 < t < 1. Each lies on its surface and inside its edges. Each matches an independent image-source calculation in the test to within 0.1 cm, with delay and frequency matching too. Direct rays are cyan and reflected rays red. Looking at a point shows its ms and Hz tag; looking away hides it. |
+| 3 | Walking sideways moves the points | `c3-points-follow-head` | ✅ Pass | Moving the head 30 cm left, 30 cm right and 20 cm forward moves every point. Each new point matches the calculation for the new head position, and the rays still meet exactly at it. |
+| 4 | A panel within 8 cm snaps, the ray turns green, the counter rises | `c4-panel-snap` | ✅ Pass | A panel 16 cm from the point does not snap. Dragged onto the point, it snaps flush and centred, that ray turns green while the others stay red, the card shows "1/3 Treated" and the audio mix moves to one third. |
+| 5 | All three treated: green, chime, clean audio, 3/3, and Reset restores everything | `c5-room-treated-reset` | ✅ Pass | Three panel drags move the mix to 1/3, 2/3, then 1. All rays and rings turn green, the completion chime plays, only the clean loop is audible and the card reads "ROOM TREATED – 3/3 REFLECTION POINTS". Reset restores step 1, a count of 0, hidden rays, the hollow audio, and the start positions of the monitors and panels. |
+| 6 | An off-screen point shows the edge arrow, and turning back hides it | `c6-out-of-view-arrow` | ✅ Pass | Facing the desk, the left-wall point is outside the 32° × 37° view. Turning away from every point shows the arrow with a new ping, inside the view near its edge and pointing at its target. Turning towards the point hides the arrow and shows the point and its tag. |
+
+The scenarios use real input: SIK pinch-drags on the monitors and panels, SIK triggers on the UI Kit buttons, and real moves and turns of the preview camera. They read the result through `getState()` and check positions, delays, frequencies and the field of view against their own calculations, not the Lens's. To run them, open the LEAF panel in Lens Studio and run each scenario on the preview.
+
+**What the tests cannot check:** how the hollow and clean audio actually sound (they check which sounds play and at what volume), how the glow looks (colours are read from material values), and real hand tracking on glasses.
 
 ### Logic proven, feel unproven
 
@@ -220,7 +224,7 @@ Each criterion from the [design brief](devpost/design-brief.md) has a LEAF scena
 - Real walls and desk from surface detection, replacing the stand-ins.
 - Measuring the room with the microphone so the dips shown are the dips heard.
 - Ceiling reflections and second bounces.
-- A LEAF scenario for the out-of-view arrow, so every criterion has one.
+- Running the LEAF suite on a real SPECS device.
 
 ## Run it
 
@@ -247,7 +251,7 @@ Built for the **Learn AR with SPECS** hackathon, using the required tools:
 
 1. **Plan:** the Devpost Learn skill pack's `plan-lens` interview produced the approved [design brief](devpost/design-brief.md).
 2. **Build:** CLAD and the Lens Studio MCP built the Lens from that brief.
-3. **Verify:** LEAF scenarios check each done criterion in the preview.
+3. **Verify:** LEAF scenarios check each done criterion in the preview. All six pass.
 
 ## Disclosure
 

@@ -1,0 +1,181 @@
+- !<AssetImportMetadata/f48b0e1e-bef1-45ad-8cd9-d66f861bbadd>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 3e6cd75f-feb9-400b-98cd-c86800933409
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 3e6cd75f-feb9-400b-98cd-c86800933409
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5b412c00-cd4c-4c56-9bf2-2ae78c296843
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/5b412c00-cd4c-4c56-9bf2-2ae78c296843>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 39b6d02e-18e9-4738-ad5b-8911d5142d69
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    acousticCenterHeightCm: false
+    aimAssist: false
+    anchorToHeadOnStart: false
+    angleToleranceDeg: false
+    audio: false
+    backWall: false
+    baseMaterial: false
+    cameraObject: false
+    desk: false
+    deskSourceMonitor: false
+    directColor: false
+    guidanceArrow: false
+    leftMonitor: false
+    leftWall: false
+    monitorEdgeMarginCm: false
+    monitorHeightCm: false
+    panel1: false
+    panel2: false
+    panel3: false
+    panelRack: false
+    panelThicknessCm: false
+    pingIntervalSeconds: false
+    pointLabels: false
+    rayEyeGapCm: false
+    rayThicknessCm: false
+    reflectedColor: false
+    rightMonitor: false
+    rightWall: false
+    ringRadiusCm: false
+    snapDistanceCm: false
+    statusCard: false
+    studioRoot: false
+    successColor: false
+    targetAngleDeg: false
+    triangleColor: false
+    verboseLogs: false
+    viewHeightDeg: false
+    viewWidthDeg: false
+    visualsRoot: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      studioRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      leftMonitor: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      rightMonitor: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      panel1: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      panel2: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
+      panel3: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
+      panelRack: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      leftWall: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
+      rightWall: !<MappingBased.AssignableType_7> 00000000-0000-0000-0000-000000000000
+      desk: !<MappingBased.AssignableType_8> 00000000-0000-0000-0000-000000000000
+      backWall: !<MappingBased.AssignableType_9> 00000000-0000-0000-0000-000000000000
+      statusCard: !<MappingBased.AssignableType_10> 00000000-0000-0000-0000-000000000000
+      pointLabels: !<MappingBased.AssignableType_11> 00000000-0000-0000-0000-000000000000
+      guidanceArrow: !<MappingBased.AssignableType_12> 00000000-0000-0000-0000-000000000000
+      audio: !<MappingBased.AssignableType_13> 00000000-0000-0000-0000-000000000000
+      baseMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      visualsRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      targetAngleDeg: !<float> 60.000000
+      angleToleranceDeg: !<float> 2.000000
+      acousticCenterHeightCm: !<float> 12.000000
+      monitorHeightCm: !<float> 30.000000
+      monitorEdgeMarginCm: !<float> 5.000000
+      deskSourceMonitor: Left
+      snapDistanceCm: !<float> 8.000000
+      aimAssist: true
+      panelThicknessCm: !<float> 5.000000
+      viewWidthDeg: !<float> 32.000000
+      viewHeightDeg: !<float> 37.000000
+      pingIntervalSeconds: !<float> 4.000000
+      ringRadiusCm: !<float> 9.000000
+      rayThicknessCm: 0.500000
+      rayEyeGapCm: !<float> 25.000000
+      directColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      reflectedColor: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+      successColor: !<Vec4> {x: 0.060000, y: 0.720000, z: 0.510000, w: 1.000000}
+      triangleColor: !<Vec4> {x: 0.900000, y: 0.930000, z: 1.000000, w: 0.900000}
+      anchorToHeadOnStart: true
+      verboseLogs: true
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorMain – flow, reflection maths, snapping, guidance</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">References</span>"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input SceneObject cameraObject {"hint":"The world camera — its position is the listening position (your head)"}'
+    - '// @input SceneObject studioRoot {"hint":"Root of the virtual studio stand-in; re-anchored to the head on start"}'
+    - '// @input AssignableType_1 leftMonitor {"hint":"Left studio monitor"}'
+    - '// @input AssignableType_2 rightMonitor {"hint":"Right studio monitor"}'
+    - '// @input AssignableType_3 panel1 {"hint":"Acoustic panel 1"}'
+    - '// @input AssignableType_4 panel2 {"hint":"Acoustic panel 2"}'
+    - '// @input AssignableType_5 panel3 {"hint":"Acoustic panel 3"}'
+    - '// @input SceneObject panelRack {"hint":"Panel rack (shown with the panels in step 3)"}'
+    - '// @input AssignableType_6 leftWall {"hint":"Left wall surface"}'
+    - '// @input AssignableType_7 rightWall {"hint":"Right wall surface"}'
+    - '// @input AssignableType_8 desk {"hint":"Desk top surface"}'
+    - '// @input AssignableType_9 backWall {"hint":"Optional back wall (studio context only, no reflection point)"}'
+    - '// @input AssignableType_10 statusCard {"hint":"Status card UI module"}'
+    - '// @input AssignableType_11 pointLabels {"hint":"Reflection point tag UI module"}'
+    - '// @input AssignableType_12 guidanceArrow {"hint":"Out-of-view edge arrow"}'
+    - '// @input AssignableType_13 audio {"hint":"Audio controller (hollow → clean crossfade + cues)"}'
+    - '// @input Asset.Material baseMaterial {"hint":"Base unlit material, cloned and tinted for rays / rings / rack"}'
+    - '// @input SceneObject visualsRoot {"hint":"Parent for runtime-created rays and rings"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Speaker setup</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Speaker setup"}'
+    - '// @input float targetAngleDeg = 60 {"hint":"Target speaker angle at the listening position, degrees", "widget":"slider", "min":30, "max":90, "step":1}'
+    - '// @input float angleToleranceDeg = 2 {"hint":"Sweet-spot tolerance, ± degrees", "widget":"slider", "min":0.5, "max":10, "step":0.5}'
+    - '// @input float acousticCenterHeightCm = 12 {"hint":"Height of the acoustic centre above the desk top, cm", "widget":"slider", "min":5, "max":30, "step":0.5}'
+    - '// @input float monitorHeightCm = 30 {"hint":"Monitor height in cm (its origin sits half this above the desk)", "widget":"slider", "min":10, "max":50, "step":1}'
+    - '// @input float monitorEdgeMarginCm = 5 {"hint":"How far a monitor centre must stay inside the desk edges, cm", "widget":"slider", "min":0, "max":20, "step":0.5}'
+    - '// @input string deskSourceMonitor = "Left" {"hint":"Which monitor produces the desk reflection", "widget":"combobox", "values":[{"label":"Left", "value":"Left"}, {"label":"Right", "value":"Right"}]}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Treatment &amp; guidance</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Treatment & guidance"}'
+    - '// @input float snapDistanceCm = 8 {"hint":"A panel snaps when its centre comes within this distance of an untreated point, cm", "widget":"slider", "min":2, "max":30, "step":0.5}'
+    - '// @input bool aimAssist = true {"hint":"Also snap while dragging when the panel covers the point along your line of sight (same distance)"}'
+    - '// @input float panelThicknessCm = 5 {"hint":"Panel thickness in cm (snapped panels sit flush, half this off the surface)", "widget":"slider", "min":1, "max":15, "step":0.5}'
+    - '// @input float viewWidthDeg = 32 {"hint":"SPECS view width in degrees (out-of-view test)", "widget":"slider", "min":10, "max":90, "step":0.5}'
+    - '// @input float viewHeightDeg = 37 {"hint":"SPECS view height in degrees (out-of-view test)", "widget":"slider", "min":10, "max":90, "step":0.5}'
+    - '// @input float pingIntervalSeconds = 4 {"hint":"Seconds between subtle pings while the edge arrow is shown", "widget":"slider", "min":1, "max":15, "step":0.5}'
+    - '// @input float ringRadiusCm = 9 {"hint":"Untreated ring radius when looked at, cm", "widget":"slider", "min":3, "max":20, "step":0.5}'
+    - '// @input float rayThicknessCm = 0.5 {"hint":"Ray thickness, cm", "widget":"slider", "min":0.1, "max":2, "step":0.05}'
+    - '// @input float rayEyeGapCm = 25 {"hint":"Rays stop this far short of your eyes, cm", "widget":"slider", "min":5, "max":60, "step":1}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Colours</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Colours"}'
+    - '// @input vec4 directColor = "{0.22,0.74,0.97,1}" {"hint":"Direct rays (#38BDF8)", "widget":"color"}'
+    - '// @input vec4 reflectedColor = "{0.96,0.25,0.37,1}" {"hint":"Reflected rays and untreated rings (#F43F5E)", "widget":"color"}'
+    - '// @input vec4 successColor = "{0.06,0.72,0.51,1}" {"hint":"Locked / treated (#10B981)", "widget":"color"}'
+    - '// @input vec4 triangleColor = "{0.9,0.93,1,0.9}" {"hint":"Speaker triangle while not yet locked", "widget":"color"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Debug</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Debug"}'
+    - '// @input bool anchorToHeadOnStart = true {"hint":"Re-anchor the studio to the head position/heading on start"}'
+    - '// @input bool verboseLogs = true {"hint":"Print state changes to the log"}'
+    - '// @ui {"widget":"group_end"}'

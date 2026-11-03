@@ -1,0 +1,70 @@
+- !<AssetImportMetadata/02965365-a0b6-4974-8607-ed73d89f663b>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> aa13d568-0620-4e55-982d-6ded52bd6d70
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/aa13d568-0620-4e55-982d-6ded52bd6d70>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: c198a01e-5f7e-40ce-9e29-9816d4dbd03c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    baseMaterial: false
+    bodyColor: false
+    colliderPaddingCm: false
+    highlightColor: false
+    kind: false
+    sizeCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - baseMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      kind: monitor
+      sizeCm: !<Vec3> {x: 20.000000, y: 30.000000, z: 22.000000}
+      bodyColor: !<Vec4> {x: 0.780000, y: 0.820000, z: 0.920000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorDraggable – pinch-drag prop</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">References</span>"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Material baseMaterial {"hint":"Base unlit material cloned for the placeholder visual"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Settings</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input string kind = "monitor" {"hint":"Placeholder style", "widget":"combobox", "values":[{"label":"Studio monitor", "value":"monitor"}, {"label":"Acoustic panel", "value":"panel"}]}'
+    - '// @input vec3 sizeCm = {20,30,22} {"hint":"Prop size in cm (width, height, depth) — also the grab collider size"}'
+    - '// @input vec4 bodyColor = "{0.78,0.82,0.92,1}" {"hint":"Placeholder body colour (keep light — dark is invisible on Specs)", "widget":"color"}'
+    - '// @input vec4 highlightColor = "{0.22,0.74,0.97,1}" {"hint":"Accent / highlight colour shown while aimed at", "widget":"color"}'
+    - '// @input float colliderPaddingCm = 2 {"hint":"Extra collider padding in cm so targets are big and easy to hit", "widget":"slider", "min":0, "max":10, "step":0.5}'
+    - '// @ui {"widget":"group_end"}'

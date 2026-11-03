@@ -1,0 +1,70 @@
+- !<AssetImportMetadata/aa832f93-b4fa-4e70-ad7d-81f69787168c>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> ce25c328-3af4-444a-982e-3db1260ec81c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> ce25c328-3af4-444a-982e-3db1260ec81c
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> fce87f1c-fcfc-434c-a398-11542171ca66
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/fce87f1c-fcfc-434c-a398-11542171ca66>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 301672fb-34f0-4923-8dbf-2cd5da0c128c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    holdAtStep: false
+    holdViewPitchDeg: false
+    holdViewYawDeg: false
+    main: false
+    runOnStart: false
+    stepSeconds: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - main: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      runOnStart: false
+      stepSeconds: 1.200000
+      holdAtStep: !<float> 99.000000
+      holdViewYawDeg: !<float> 0.000000
+      holdViewPitchDeg: !<float> 0.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorSelfTest – debug walkthrough (off by default)</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">References</span>"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input AssignableType_1 main {"hint":"The experience orchestrator"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Debug</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Debug"}'
+    - '// @input bool runOnStart {"hint":"Run the scripted walkthrough when the lens starts"}'
+    - '// @input float stepSeconds = 1.2 {"hint":"Seconds between walkthrough steps (raise to take screenshots)", "widget":"slider", "min":0.3, "max":10, "step":0.1}'
+    - '// @input float holdAtStep = 99 {"hint":"Stop the walkthrough after this many steps (for screenshots). 99 = run all", "widget":"slider", "min":0, "max":99, "step":1}'
+    - '// @input float holdViewYawDeg {"hint":"While holding, turn the view by this many degrees (+ = look right)", "widget":"slider", "min":-180, "max":180, "step":1}'
+    - '// @input float holdViewPitchDeg {"hint":"While holding, look down/up by this many degrees (+ = look down)", "widget":"slider", "min":-60, "max":60, "step":1}'
+    - '// @ui {"widget":"group_end"}'

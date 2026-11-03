@@ -1,0 +1,67 @@
+- !<AssetImportMetadata/600fe802-d0cd-4a9c-b3d8-25e785b864af>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 48e74e04-43ee-494a-8129-ab814ad070a7
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 48e74e04-43ee-494a-8129-ab814ad070a7
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 42ce76b7-f18f-461e-be4e-f0e5d1060aa3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/42ce76b7-f18f-461e-be4e-f0e5d1060aa3>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 37240236-e465-415b-b990-4d7d712f05a0
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    baseMaterial: false
+    color: false
+    distanceCm: false
+    edgeFraction: false
+    sizeCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - baseMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      distanceCm: !<float> 70.000000
+      sizeCm: !<float> 4.000000
+      edgeFraction: 0.820000
+      color: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorGuidanceArrow – out-of-view edge arrow</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">References</span>"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Material baseMaterial {"hint":"Base unlit material, cloned and tinted"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Settings</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float distanceCm = 70 {"hint":"Distance in front of the eyes the arrow is drawn at, in cm", "widget":"slider", "min":40, "max":150, "step":1}'
+    - '// @input float sizeCm = 4 {"hint":"Arrow length in cm", "widget":"slider", "min":1, "max":10, "step":0.5}'
+    - '// @input float edgeFraction = 0.82 {"hint":"How far towards the view edge the arrow sits (1 = exactly on the edge)", "widget":"slider", "min":0.5, "max":0.98, "step":0.01}'
+    - '// @input vec4 color = "{0.96,0.25,0.37,1}" {"hint":"Arrow colour (#F43F5E — matches untreated points)", "widget":"color"}'
+    - '// @ui {"widget":"group_end"}'

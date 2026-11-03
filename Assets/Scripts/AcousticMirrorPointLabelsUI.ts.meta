@@ -1,0 +1,63 @@
+- !<AssetImportMetadata/9bf89e68-8f91-4856-ab19-c06a120700c2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b2a7af2c-502d-4794-b167-c0fa8c360485
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b2a7af2c-502d-4794-b167-c0fa8c360485
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7955bc0c-f792-4d97-bac2-8f26ad67785c
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7955bc0c-f792-4d97-bac2-8f26ad67785c>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 9d92b27a-9da5-4b68-abc3-acc357d58b88
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    readingDistanceCm: false
+    tagCount: false
+    tagWidthCm: false
+    treatedColor: false
+    untreatedColor: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - tagCount: !<float> 3.000000
+      tagWidthCm: !<float> 22.000000
+      readingDistanceCm: !<float> 140.000000
+      untreatedColor: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+      treatedColor: !<Vec4> {x: 0.060000, y: 0.720000, z: 0.510000, w: 1.000000}
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorPointLabelsUI – reflection point tags</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Settings</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input float tagCount = 3 {"hint":"Number of tags to create (one per reflection point)", "widget":"slider", "min":1, "max":6, "step":1}'
+    - '// @input float tagWidthCm = 22 {"hint":"Tag width in cm", "widget":"slider", "min":10, "max":40, "step":0.5}'
+    - '// @input float readingDistanceCm = 140 {"hint":"Viewing distance the tag text is sized for, in cm", "widget":"slider", "min":60, "max":250, "step":1}'
+    - '// @input vec4 untreatedColor = "{0.96,0.25,0.37,1}" {"hint":"Untreated accent colour (#F43F5E)", "widget":"color"}'
+    - '// @input vec4 treatedColor = "{0.06,0.72,0.51,1}" {"hint":"Treated accent colour (#10B981)", "widget":"color"}'
+    - '// @ui {"widget":"group_end"}'

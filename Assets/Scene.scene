@@ -4,6 +4,7 @@
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> f5d74682-203a-4970-81ea-9fa7b88c96bb
+    - !<own> 32ab07a1-d3fe-4b32-822a-6e5d9dd1c778
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       - id: 1
@@ -189,6 +190,21 @@
     - !<own> 276368e3-f687-4cc6-947d-24de3a78c9af
   Components:
     []
+- !<SceneObject/039fe72b-ac3d-4626-9bdc-a1340630abc3>
+  PrefabRemaps:
+    []
+  Name: RightWall
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 135.000000, y: 5.000000, z: -55.000000}
+    Rotation: {x: 0.000000, y: -90.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3274509f-8936-4cdd-abf3-b062c903f889
 - !<SceneObject/0451d993-a1f7-464e-9b69-32c0d9af8ed7>
   PrefabRemaps:
     []
@@ -234,6 +250,43 @@
     []
   Components:
     []
+- !<ScriptComponent/052dc9f0-0924-449c-8f62-cd17646d2e33>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDraggable
+  Enabled: true
+  ScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ScriptInputsDefault:
+    highlightColor: true
+    colliderPaddingCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      kind: panel
+      sizeCm: !<Vec3> {x: 60.000000, y: 60.000000, z: 5.000000}
+      bodyColor: !<Vec4> {x: 0.620000, y: 0.780000, z: 0.820000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/07577cd5-8e3a-4f00-9314-cc47dae270e8>
+  PrefabRemaps:
+    []
+  Name: StatusCard
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 10.000000, y: 14.000000, z: -78.000000}
+    Rotation: {x: 0.000000, y: -7.300000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8673953a-6cb9-41ee-8ee9-0db19dabdd49
 - !<ScriptComponent/0847d2bb-a13f-4c4a-a404-169f67308f6f>
   PrefabRemaps:
     []
@@ -364,6 +417,30 @@
     - !<own> 05147ea1-cb6b-4629-9484-199a4aa4d92a
   Components:
     []
+- !<ScriptComponent/0bbe7b3a-5098-40c3-bcfa-3aa99192b118>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorPointLabelsUI
+  Enabled: true
+  ScriptAsset: !<reference> b2a7af2c-502d-4794-b167-c0fa8c360485
+  ScriptInputsDefault:
+    tagCount: true
+    tagWidthCm: true
+    readingDistanceCm: true
+    untreatedColor: true
+    treatedColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      tagCount: !<float> 3.000000
+      tagWidthCm: !<float> 22.000000
+      readingDistanceCm: !<float> 140.000000
+      untreatedColor: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+      treatedColor: !<Vec4> {x: 0.060000, y: 0.720000, z: 0.510000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/0c355300-e635-47c1-a8c3-5ddef30b8824>
   PrefabRemaps:
     []
@@ -496,6 +573,51 @@
     - !<own> a6af4948-9adc-4052-ae22-db902dd2764e
   Components:
     []
+- !<ScriptComponent/138d0445-b252-41b9-868f-caf85d097dbf>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDraggable
+  Enabled: true
+  ScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ScriptInputsDefault:
+    highlightColor: true
+    colliderPaddingCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      kind: panel
+      sizeCm: !<Vec3> {x: 60.000000, y: 60.000000, z: 5.000000}
+      bodyColor: !<Vec4> {x: 0.620000, y: 0.780000, z: 0.820000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/15ddab00-4722-4479-95da-221a891ffbb3>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorGuidanceArrow
+  Enabled: true
+  ScriptAsset: !<reference> 48e74e04-43ee-494a-8129-ab814ad070a7
+  ScriptInputsDefault:
+    distanceCm: true
+    sizeCm: true
+    edgeFraction: true
+    color: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      distanceCm: !<float> 70.000000
+      sizeCm: !<float> 4.000000
+      edgeFraction: 0.820000
+      color: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/181c239f-175e-4912-94fc-d37a2599b2d6>
   PrefabRemaps:
     []
@@ -511,6 +633,34 @@
     []
   Components:
     []
+- !<ScriptComponent/1a5f08d6-be05-4aab-9475-88cf8ef4debb>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorSurface
+  Enabled: true
+  ScriptAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  ScriptInputsDefault:
+    lineColor: true
+    lineThicknessCm: true
+    slabColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      lineMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      surfaceId: Desk
+      normalAxis: !<string> Y
+      widthCm: !<float> 140.000000
+      heightCm: !<float> 70.000000
+      gridSpacingCm: !<float> 35.000000
+      lineColor: !<Vec4> {x: 0.550000, y: 0.650000, z: 0.950000, w: 0.550000}
+      lineThicknessCm: 0.400000
+      slabThicknessCm: !<float> 4.000000
+      legLengthCm: !<float> 91.000000
+      slabColor: !<Vec4> {x: 0.800000, y: 0.660000, z: 0.500000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/1f969daa-5809-4500-b314-98d91ccba131>
   PrefabRemaps:
     []
@@ -546,6 +696,39 @@
     []
   Components:
     - !<own> e1031f7e-3474-489f-a529-282f7192f812
+- !<SceneObject/2164e874-5921-499a-abd4-8acb2788c56a>
+  PrefabRemaps:
+    []
+  Name: AcousticPanel3
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -114.500000, y: -45.000000, z: -77.500000}
+    Rotation: {x: 0.000000, y: 49.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 052dc9f0-0924-449c-8f62-cd17646d2e33
+- !<SceneObject/2178ed41-62ad-4183-ae90-675e73fffde2>
+  PrefabRemaps:
+    []
+  Name: Treatment
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d788780e-73a0-4ec2-b2a7-17c622825ae2
+    - !<own> d2c82b58-89f8-42cd-a742-8d8482421b95
+    - !<own> a7695913-4c89-4222-8869-087e195375e1
+    - !<own> 2164e874-5921-499a-abd4-8acb2788c56a
+  Components:
+    []
 - !<SceneObject/23018601-1041-4785-a20e-9ad5ab722f95>
   PrefabRemaps:
     []
@@ -708,6 +891,61 @@
     - !<own> a7da4af4-3d84-4acd-a31e-920a56b4c5c8
   Components:
     []
+- !<ScriptComponent/3274509f-8936-4cdd-abf3-b062c903f889>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorSurface
+  Enabled: true
+  ScriptAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  ScriptInputsDefault:
+    normalAxis: true
+    heightCm: true
+    gridSpacingCm: true
+    lineColor: true
+    lineThicknessCm: true
+    slabThicknessCm: true
+    legLengthCm: true
+    slabColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      lineMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      surfaceId: RightWall
+      normalAxis: Z
+      widthCm: !<float> 410.000000
+      heightCm: !<float> 250.000000
+      gridSpacingCm: !<float> 50.000000
+      lineColor: !<Vec4> {x: 0.550000, y: 0.650000, z: 0.950000, w: 0.550000}
+      lineThicknessCm: 0.400000
+      slabThicknessCm: !<float> 0.000000
+      legLengthCm: !<float> 70.000000
+      slabColor: !<Vec4> {x: 0.800000, y: 0.660000, z: 0.500000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/32ab07a1-d3fe-4b32-822a-6e5d9dd1c778>
+  PrefabRemaps:
+    []
+  Name: StudioRoot
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> a69a711c-040e-48ac-b16c-c1d809e3148c
+    - !<own> 7ac5dc75-95ff-46e3-9dc3-c53d114dc7c4
+    - !<own> 7eb8465b-b118-4312-8d77-40a0b9594aaa
+    - !<own> 2178ed41-62ad-4183-ae90-675e73fffde2
+    - !<own> 5e87d370-c37c-4f90-b846-a00e824f9535
+    - !<own> 95866d20-56b4-454f-b3b2-5d406b6da548
+    - !<own> b996a5b0-68f1-4444-a60c-754fc2ca77da
+    - !<own> e9c78576-1eb1-4129-8a76-164bf1918b21
+  Components:
+    []
 - !<RenderMeshVisual/335c5f8b-2917-49e8-8af5-220696e9bc09>
   PrefabRemaps:
     []
@@ -794,6 +1032,21 @@
     - !<own> 4051028a-c608-4a97-b3d5-1a3912a7c007
   Components:
     []
+- !<SceneObject/391cb4b3-9d92-469e-9f4a-f9dfeefed040>
+  PrefabRemaps:
+    []
+  Name: GuidanceArrow
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 15ddab00-4722-4479-95da-221a891ffbb3
 - !<SceneObject/3a794764-c758-4d72-9d89-bf3ed978113f>
   PrefabRemaps:
     []
@@ -824,6 +1077,38 @@
     - !<own> 54130007-65c1-48d3-b9df-0866d8112e01
   Components:
     []
+- !<ScriptComponent/3c632cc3-f835-4bf5-90e1-c259b922397b>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorAudioController
+  Enabled: true
+  ScriptAsset: !<reference> 4a473d25-0049-4c80-99ac-bd2728b7f699
+  ScriptInputsDefault:
+    loopVolume: true
+    cueVolume: true
+    pingVolume: true
+    crossfadeSeconds: true
+    spatialLoops: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hollowLoop: !<reference.AudioTrackAsset> 8d112fa5-bb56-4ae5-a424-42ef79fedff4
+      cleanLoop: !<reference.AudioTrackAsset> 7e7f6ad6-b3cd-4f50-ba8a-c8dd0e1b57d4
+      lockChime: !<reference.AudioTrackAsset> cd7a2c42-fcfe-4804-89bf-a21279e344d6
+      completeChime: !<reference.AudioTrackAsset> 7f727d69-998e-450b-a10a-f2bf8a23ba65
+      ping: !<reference.AudioTrackAsset> 2326489f-4d00-45e2-ba9d-fc1f4f140569
+      snapSound: !<reference.AudioTrackAsset> ff3b6949-2ad1-4525-b99b-0215b372476d
+      leftMonitor: !<reference.SceneObject> 944f31dc-64dc-44bb-87d7-30231b067b70
+      rightMonitor: !<reference.SceneObject> c39f4757-ad56-4876-b432-d2de7b15f76a
+      loopVolume: 0.600000
+      cueVolume: 0.800000
+      pingVolume: 0.350000
+      crossfadeSeconds: !<float> 1.000000
+      spatialLoops: false
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/3de2c7ea-1525-465a-9056-68565a4014a7>
   PrefabRemaps:
     []
@@ -914,6 +1199,21 @@
     - !<own> 8fe2a532-9bf3-4cde-b598-04ce5470718d
   Components:
     []
+- !<SceneObject/48097375-746f-4378-9436-4975b3b74855>
+  PrefabRemaps:
+    []
+  Name: Desk
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -25.000000, z: -95.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 1a5f08d6-be05-4aab-9475-88cf8ef4debb
 - !<SceneObject/4c195c04-c397-454e-bd08-3485f37d84fe>
   PrefabRemaps:
     []
@@ -929,6 +1229,39 @@
     - !<own> 9c3a7929-faa9-4369-a85c-c75a6ab4eee7
   Components:
     []
+- !<ScriptComponent/4c29e98e-0e83-49f8-a6db-794e0ed697b2>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorSurface
+  Enabled: true
+  ScriptAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  ScriptInputsDefault:
+    normalAxis: true
+    heightCm: true
+    gridSpacingCm: true
+    lineColor: true
+    lineThicknessCm: true
+    slabThicknessCm: true
+    legLengthCm: true
+    slabColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      lineMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      surfaceId: BackWall
+      normalAxis: Z
+      widthCm: !<float> 270.000000
+      heightCm: !<float> 250.000000
+      gridSpacingCm: !<float> 50.000000
+      lineColor: !<Vec4> {x: 0.550000, y: 0.650000, z: 0.950000, w: 0.550000}
+      lineThicknessCm: 0.400000
+      slabThicknessCm: !<float> 0.000000
+      legLengthCm: !<float> 70.000000
+      slabColor: !<Vec4> {x: 0.800000, y: 0.660000, z: 0.500000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/4cb212ad-5246-4215-adf1-aaf3ccfc0e9c>
   PrefabRemaps:
     []
@@ -987,6 +1320,23 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> bf2095b6-c6f8-48c8-b840-e0a6cec0dc99
+  Components:
+    []
+- !<SceneObject/5e87d370-c37c-4f90-b846-a00e824f9535>
+  PrefabRemaps:
+    []
+  Name: UI
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 07577cd5-8e3a-4f00-9314-cc47dae270e8
+    - !<own> 7397b6b6-8cd8-4901-8d9e-f5e89b3762d5
+    - !<own> 391cb4b3-9d92-469e-9f4a-f9dfeefed040
   Components:
     []
 - !<ScriptComponent/5f153ad7-2baa-4fd9-a298-0dcfad86da3b>
@@ -1244,6 +1594,21 @@
     - !<own> 879ce45b-bd5e-40ff-a3fe-d821523427e4
   Components:
     - !<own> 64f27597-c99d-4c59-8a08-05459cc2258d
+- !<SceneObject/7397b6b6-8cd8-4901-8d9e-f5e89b3762d5>
+  PrefabRemaps:
+    []
+  Name: PointLabels
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 0bbe7b3a-5098-40c3-bcfa-3aa99192b118
 - !<SceneObject/74d13517-1dbf-42e6-b536-27afc4909c65>
   PrefabRemaps:
     []
@@ -1304,6 +1669,39 @@
     []
   Components:
     - !<own> c8e031d3-a8a1-468a-a419-427f8556de4c
+- !<ScriptComponent/78f44642-081d-404c-9fd3-8c6d76d53321>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorSurface
+  Enabled: true
+  ScriptAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  ScriptInputsDefault:
+    normalAxis: true
+    heightCm: true
+    gridSpacingCm: true
+    lineColor: true
+    lineThicknessCm: true
+    slabThicknessCm: true
+    legLengthCm: true
+    slabColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      lineMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      surfaceId: LeftWall
+      normalAxis: Z
+      widthCm: !<float> 410.000000
+      heightCm: !<float> 250.000000
+      gridSpacingCm: !<float> 50.000000
+      lineColor: !<Vec4> {x: 0.550000, y: 0.650000, z: 0.950000, w: 0.550000}
+      lineThicknessCm: 0.400000
+      slabThicknessCm: !<float> 0.000000
+      legLengthCm: !<float> 70.000000
+      slabColor: !<Vec4> {x: 0.800000, y: 0.660000, z: 0.500000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/7aa85bd8-d423-42cd-b190-473711e94929>
   PrefabRemaps:
     []
@@ -1317,6 +1715,24 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 52ecefe4-5642-445a-ad16-52ce818076bc
+  Components:
+    []
+- !<SceneObject/7ac5dc75-95ff-46e3-9dc3-c53d114dc7c4>
+  PrefabRemaps:
+    []
+  Name: Room
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> e3ecbe9e-e07a-4502-8c58-cb9bb55286f3
+    - !<own> 039fe72b-ac3d-4626-9bdc-a1340630abc3
+    - !<own> edcf67e1-5158-4c79-ae2f-d08726ec7a27
+    - !<own> 48097375-746f-4378-9436-4975b3b74855
   Components:
     []
 - !<SceneObject/7b49000e-c7d9-48c6-8abb-b6c8abcd4655>
@@ -1351,6 +1767,22 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 58ef319f-850e-40dd-8295-e6dc36ab4854
+  Components:
+    []
+- !<SceneObject/7eb8465b-b118-4312-8d77-40a0b9594aaa>
+  PrefabRemaps:
+    []
+  Name: Speakers
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 944f31dc-64dc-44bb-87d7-30231b067b70
+    - !<own> c39f4757-ad56-4876-b432-d2de7b15f76a
   Components:
     []
 - !<SceneObject/7fb3591f-54a2-4aee-b07d-fd10d56538c8>
@@ -1458,6 +1890,52 @@
     - !<own> 6c1f70d7-86d0-4972-b203-29780f8798e6
   Components:
     []
+- !<ScriptComponent/8673953a-6cb9-41ee-8ee9-0db19dabdd49>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorStatusCardUI
+  Enabled: true
+  ScriptAsset: !<reference> 0824f12a-e24a-4c8f-847d-6062f13e16f7
+  ScriptInputsDefault:
+    cardWidthCm: true
+    readingDistanceCm: true
+    title: true
+    successColor: true
+    infoColor: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cardWidthCm: !<float> 30.000000
+      readingDistanceCm: !<float> 80.000000
+      title: AcousticMirror
+      successColor: !<Vec4> {x: 0.060000, y: 0.720000, z: 0.510000, w: 1.000000}
+      infoColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/87307ce2-6c7f-442e-a4ca-777d6b30433d>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDraggable
+  Enabled: true
+  ScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ScriptInputsDefault:
+    highlightColor: true
+    colliderPaddingCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      kind: panel
+      sizeCm: !<Vec3> {x: 60.000000, y: 60.000000, z: 5.000000}
+      bodyColor: !<Vec4> {x: 0.620000, y: 0.780000, z: 0.820000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/879ce45b-bd5e-40ff-a3fe-d821523427e4>
   PrefabRemaps:
     []
@@ -1544,6 +2022,21 @@
     - !<own> 8cb3dd13-6ebf-41e6-9a23-94a69dd96f87
   Components:
     []
+- !<SceneObject/944f31dc-64dc-44bb-87d7-30231b067b70>
+  PrefabRemaps:
+    []
+  Name: LeftMonitor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -44.700001, y: -10.000000, z: -108.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e3ab3566-a06e-46e5-b3ac-d93dff247f24
 - !<SceneObject/9468c53c-f76f-49b7-8a49-b5ec6af1c5a3>
   PrefabRemaps:
     []
@@ -1560,6 +2053,21 @@
     - !<own> e9454e66-5d09-4a8a-bcd7-dea762326a48
   Components:
     []
+- !<SceneObject/95866d20-56b4-454f-b3b2-5d406b6da548>
+  PrefabRemaps:
+    []
+  Name: AudioController
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3c632cc3-f835-4bf5-90e1-c259b922397b
 - !<SceneObject/988c408a-99dc-47e6-b7c4-efbf4bf8dc3c>
   PrefabRemaps:
     []
@@ -1685,6 +2193,21 @@
     - !<own> 126f3577-bc27-4a20-8d6e-a511bc459c49
   Components:
     []
+- !<SceneObject/a69a711c-040e-48ac-b16c-c1d809e3148c>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorMain
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b3984ed5-9aa4-4e1f-a82e-f65ba0ff54af
 - !<SceneObject/a6af4948-9adc-4052-ae22-db902dd2764e>
   PrefabRemaps:
     []
@@ -1715,6 +2238,21 @@
     - !<own> b22d97e6-4c06-4135-af29-d26adb2b9d86
   Components:
     []
+- !<SceneObject/a7695913-4c89-4222-8869-087e195375e1>
+  PrefabRemaps:
+    []
+  Name: AcousticPanel2
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -103.300003, y: -50.000000, z: -78.800003}
+    Rotation: {x: 0.000000, y: 49.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 138d0445-b252-41b9-868f-caf85d097dbf
 - !<SceneObject/a7da4af4-3d84-4acd-a31e-920a56b4c5c8>
   PrefabRemaps:
     []
@@ -1790,6 +2328,80 @@
     - !<own> 3de2c7ea-1525-465a-9056-68565a4014a7
   Components:
     []
+- !<ScriptComponent/b3984ed5-9aa4-4e1f-a82e-f65ba0ff54af>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorMain
+  Enabled: true
+  ScriptAsset: !<reference> 3e6cd75f-feb9-400b-98cd-c86800933409
+  ScriptInputsDefault:
+    targetAngleDeg: true
+    angleToleranceDeg: true
+    acousticCenterHeightCm: true
+    monitorHeightCm: true
+    monitorEdgeMarginCm: true
+    deskSourceMonitor: true
+    snapDistanceCm: true
+    aimAssist: true
+    panelThicknessCm: true
+    viewWidthDeg: true
+    viewHeightDeg: true
+    pingIntervalSeconds: true
+    ringRadiusCm: true
+    rayThicknessCm: true
+    rayEyeGapCm: true
+    directColor: true
+    reflectedColor: true
+    successColor: true
+    triangleColor: true
+    anchorToHeadOnStart: true
+    verboseLogs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cameraObject: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
+      studioRoot: !<reference.SceneObject> 32ab07a1-d3fe-4b32-822a-6e5d9dd1c778
+      leftMonitor: !<MappingBased.AssignableType_1> e3ab3566-a06e-46e5-b3ac-d93dff247f24
+      rightMonitor: !<MappingBased.AssignableType_2> d211967b-3eb8-486f-8651-d2aaae3759ee
+      panel1: !<MappingBased.AssignableType_3> 87307ce2-6c7f-442e-a4ca-777d6b30433d
+      panel2: !<MappingBased.AssignableType_4> 138d0445-b252-41b9-868f-caf85d097dbf
+      panel3: !<MappingBased.AssignableType_5> 052dc9f0-0924-449c-8f62-cd17646d2e33
+      panelRack: !<reference.SceneObject> d788780e-73a0-4ec2-b2a7-17c622825ae2
+      leftWall: !<MappingBased.AssignableType_6> 78f44642-081d-404c-9fd3-8c6d76d53321
+      rightWall: !<MappingBased.AssignableType_7> 3274509f-8936-4cdd-abf3-b062c903f889
+      desk: !<MappingBased.AssignableType_8> 1a5f08d6-be05-4aab-9475-88cf8ef4debb
+      backWall: !<MappingBased.AssignableType_9> 4c29e98e-0e83-49f8-a6db-794e0ed697b2
+      statusCard: !<MappingBased.AssignableType_10> 8673953a-6cb9-41ee-8ee9-0db19dabdd49
+      pointLabels: !<MappingBased.AssignableType_11> 0bbe7b3a-5098-40c3-bcfa-3aa99192b118
+      guidanceArrow: !<MappingBased.AssignableType_12> 15ddab00-4722-4479-95da-221a891ffbb3
+      audio: !<MappingBased.AssignableType_13> 3c632cc3-f835-4bf5-90e1-c259b922397b
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      visualsRoot: !<reference.SceneObject> b996a5b0-68f1-4444-a60c-754fc2ca77da
+      targetAngleDeg: !<float> 60.000000
+      angleToleranceDeg: !<float> 2.000000
+      acousticCenterHeightCm: !<float> 12.000000
+      monitorHeightCm: !<float> 30.000000
+      monitorEdgeMarginCm: !<float> 5.000000
+      deskSourceMonitor: Left
+      snapDistanceCm: !<float> 8.000000
+      aimAssist: true
+      panelThicknessCm: !<float> 5.000000
+      viewWidthDeg: !<float> 32.000000
+      viewHeightDeg: !<float> 37.000000
+      pingIntervalSeconds: !<float> 4.000000
+      ringRadiusCm: !<float> 9.000000
+      rayThicknessCm: 0.500000
+      rayEyeGapCm: !<float> 25.000000
+      directColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      reflectedColor: !<Vec4> {x: 0.960000, y: 0.250000, z: 0.370000, w: 1.000000}
+      successColor: !<Vec4> {x: 0.060000, y: 0.720000, z: 0.510000, w: 1.000000}
+      triangleColor: !<Vec4> {x: 0.900000, y: 0.930000, z: 1.000000, w: 0.900000}
+      anchorToHeadOnStart: true
+      verboseLogs: true
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/b463be13-dddb-4b36-a3dd-c344bd3d8ef5>
   PrefabRemaps:
     []
@@ -1880,6 +2492,21 @@
     - !<own> 11ac73c9-b802-4eb6-abf5-f73054ca7e20
   Components:
     []
+- !<SceneObject/b996a5b0-68f1-4444-a60c-754fc2ca77da>
+  PrefabRemaps:
+    []
+  Name: RuntimeVisuals
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    []
 - !<SceneObject/bb75b5ea-8baf-4d8d-bcf8-49bd79873881>
   PrefabRemaps:
     []
@@ -1955,6 +2582,21 @@
     []
   Components:
     []
+- !<SceneObject/c39f4757-ad56-4876-b432-d2de7b15f76a>
+  PrefabRemaps:
+    []
+  Name: RightMonitor
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 44.700001, y: -10.000000, z: -108.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d211967b-3eb8-486f-8651-d2aaae3759ee
 - !<ScriptComponent/c8e031d3-a8a1-468a-a419-427f8556de4c>
   PrefabRemaps:
     []
@@ -2098,6 +2740,71 @@
     - !<own> bb9036be-541f-49e7-9554-c297d354da21
   Components:
     []
+- !<ScriptComponent/d0d3166f-0c8b-447a-b3db-1ffc092a8563>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorSelfTest
+  Enabled: true
+  ScriptAsset: !<reference> ce25c328-3af4-444a-982e-3db1260ec81c
+  ScriptInputsDefault:
+    runOnStart: true
+    stepSeconds: true
+    holdAtStep: true
+    holdViewYawDeg: true
+    holdViewPitchDeg: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      main: !<MappingBased.AssignableType_1> b3984ed5-9aa4-4e1f-a82e-f65ba0ff54af
+      runOnStart: false
+      stepSeconds: 1.200000
+      holdAtStep: !<float> 99.000000
+      holdViewYawDeg: !<float> 0.000000
+      holdViewPitchDeg: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/d211967b-3eb8-486f-8651-d2aaae3759ee>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDraggable
+  Enabled: true
+  ScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ScriptInputsDefault:
+    kind: true
+    sizeCm: true
+    bodyColor: true
+    highlightColor: true
+    colliderPaddingCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      kind: monitor
+      sizeCm: !<Vec3> {x: 20.000000, y: 30.000000, z: 22.000000}
+      bodyColor: !<Vec4> {x: 0.780000, y: 0.820000, z: 0.920000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/d2c82b58-89f8-42cd-a742-8d8482421b95>
+  PrefabRemaps:
+    []
+  Name: AcousticPanel1
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -92.000000, y: -55.000000, z: -80.000000}
+    Rotation: {x: 0.000000, y: 49.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 87307ce2-6c7f-442e-a4ca-777d6b30433d
 - !<ScriptComponent/d3e2fbc5-8795-4913-9af6-c8626f8e6d9c>
   PrefabRemaps:
     []
@@ -2146,6 +2853,21 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> bbcbfc17-8d65-4333-bce1-6f7239f690b8
+  Components:
+    []
+- !<SceneObject/d788780e-73a0-4ec2-b2a7-17c622825ae2>
+  PrefabRemaps:
+    []
+  Name: PanelRack
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -92.000000, y: -95.000000, z: -80.000000}
+    Rotation: {x: 0.000000, y: 49.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
   Components:
     []
 - !<SceneObject/d9071294-12e8-425f-98f1-bf308a02639e>
@@ -2273,6 +2995,46 @@
     - !<own> 7e2075c6-0882-4275-8365-16a03da73298
   Components:
     []
+- !<ScriptComponent/e3ab3566-a06e-46e5-b3ac-d93dff247f24>
+  PrefabRemaps:
+    []
+  Name: AcousticMirrorDraggable
+  Enabled: true
+  ScriptAsset: !<reference> 00e96c58-a4df-4e1e-aaf7-fc81c02f7357
+  ScriptInputsDefault:
+    kind: true
+    sizeCm: true
+    bodyColor: true
+    highlightColor: true
+    colliderPaddingCm: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      baseMaterial: !<reference.Material> 0a4417e2-8c10-41f6-8103-1fa70f91bcc9
+      kind: monitor
+      sizeCm: !<Vec3> {x: 20.000000, y: 30.000000, z: 22.000000}
+      bodyColor: !<Vec4> {x: 0.780000, y: 0.820000, z: 0.920000, w: 1.000000}
+      highlightColor: !<Vec4> {x: 0.220000, y: 0.740000, z: 0.970000, w: 1.000000}
+      colliderPaddingCm: !<float> 2.000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/e3ecbe9e-e07a-4502-8c58-cb9bb55286f3>
+  PrefabRemaps:
+    []
+  Name: LeftWall
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -135.000000, y: 5.000000, z: -55.000000}
+    Rotation: {x: 0.000000, y: 90.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 78f44642-081d-404c-9fd3-8c6d76d53321
 - !<SceneObject/e42bbb9f-e951-4432-be2e-3cc712b1fc33>
   PrefabRemaps:
     []
@@ -2351,6 +3113,36 @@
     Fingers_length: 0.000000
     Thumb_inflate: 0.000000
     Thumb_length: 0.000000
+- !<SceneObject/e9c78576-1eb1-4129-8a76-164bf1918b21>
+  PrefabRemaps:
+    []
+  Name: SelfTest
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d0d3166f-0c8b-447a-b3db-1ffc092a8563
+- !<SceneObject/edcf67e1-5158-4c79-ae2f-d08726ec7a27>
+  PrefabRemaps:
+    []
+  Name: BackWall
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 5.000000, z: 150.000000}
+    Rotation: {x: 0.000000, y: 180.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4c29e98e-0e83-49f8-a6db-794e0ed697b2
 - !<SceneObject/f0394c5d-4c44-4c65-a77c-e1c7e05ca905>
   PrefabRemaps:
     []

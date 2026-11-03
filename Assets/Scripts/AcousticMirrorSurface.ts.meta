@@ -1,0 +1,85 @@
+- !<AssetImportMetadata/a4048be5-39a6-4e64-adf9-8adafc97e8d2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f8969752-b408-4c87-8afb-dff09b717731
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 640f99d6-1298-4284-8c43-06c503a1dd58
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/640f99d6-1298-4284-8c43-06c503a1dd58>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: 01b3e1fd-fc74-4e7e-b7c3-4989c0a8abad
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    gridSpacingCm: false
+    heightCm: false
+    legLengthCm: false
+    lineColor: false
+    lineMaterial: false
+    lineThicknessCm: false
+    normalAxis: false
+    slabColor: false
+    slabThicknessCm: false
+    surfaceId: false
+    widthCm: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - lineMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      surfaceId: Surface
+      normalAxis: Z
+      widthCm: !<float> 400.000000
+      heightCm: !<float> 250.000000
+      gridSpacingCm: !<float> 50.000000
+      lineColor: !<Vec4> {x: 0.550000, y: 0.650000, z: 0.950000, w: 0.550000}
+      lineThicknessCm: 0.400000
+      slabThicknessCm: !<float> 0.000000
+      legLengthCm: !<float> 70.000000
+      slabColor: !<Vec4> {x: 0.800000, y: 0.660000, z: 0.500000, w: 1.000000}
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">AcousticMirrorSurface – reflecting wall / desk stand-in</span>"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">References</span>"}'
+    - '// @ui {"widget":"group_start", "label":"References"}'
+    - '// @input Asset.Material lineMaterial {"hint":"Base unlit material, cloned and tinted for the grid lines"}'
+    - '// @ui {"widget":"group_end"}'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<span style=\"color: #60A5FA;\">Settings</span>"}'
+    - '// @ui {"widget":"group_start", "label":"Settings"}'
+    - '// @input string surfaceId = "Surface" {"hint":"Surface id used in state and logs (LeftWall, RightWall, Desk, BackWall)"}'
+    - '// @input string normalAxis = "Z" {"hint":"Local axis that points into the room: Z for walls, Y for the desk top", "widget":"combobox", "values":[{"label":"Z (wall)", "value":"Z"}, {"label":"Y (desk top)", "value":"Y"}]}'
+    - '// @input float widthCm = 400 {"hint":"Surface width in cm (along local X)", "widget":"slider", "min":20, "max":600, "step":1}'
+    - '// @input float heightCm = 250 {"hint":"Surface height in cm (local Y for walls, local Z depth for the desk)", "widget":"slider", "min":20, "max":400, "step":1}'
+    - '// @input float gridSpacingCm = 50 {"hint":"Spacing of the faint glowing grid lines, in cm (0 = outline only)", "widget":"slider", "min":0, "max":100, "step":1}'
+    - '// @input vec4 lineColor = "{0.55,0.65,0.95,0.55}" {"hint":"Outline / grid colour — keep it light; black is invisible on Specs", "widget":"color"}'
+    - '// @input float lineThicknessCm = 0.4 {"hint":"Line thickness in cm", "widget":"slider", "min":0.1, "max":2, "step":0.1}'
+    - '// @input float slabThicknessCm {"hint":"Desk only: build a solid desk top of this thickness (cm) plus legs. 0 = none", "widget":"slider", "min":0, "max":10, "step":0.5}'
+    - '// @input float legLengthCm = 70 {"hint":"Desk only: leg length below the top, cm", "widget":"slider", "min":0, "max":150, "step":1}'
+    - '// @input vec4 slabColor = "{0.80,0.66,0.50,1}" {"hint":"Desk top colour (light wood — keep it light on the additive display)", "widget":"color"}'
+    - '// @ui {"widget":"group_end"}'
